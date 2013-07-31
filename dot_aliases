@@ -1,0 +1,16 @@
+alias ll=ls-l
+alias la=ls-la
+alias lt=ls -lta
+
+gir() {
+    pat="$1"
+    if [ -z "$1" ]; then
+        echo "Usage: gir [some string to search ps output for] [optional directory to start in]"
+    else
+        if [ -z "$2" ]; then
+            grep --color=auto -sH -r -i "$pat" .
+        else
+            grep --color=auto -sH -r -i "$pat" "$2"
+        fi
+    fi
+}
