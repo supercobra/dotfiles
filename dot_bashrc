@@ -53,7 +53,7 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
@@ -63,7 +63,6 @@ fi
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -75,10 +74,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f $HOME/.aliases ]; then
-	. $HOME/.aliases
-fi
-
 if [ -n "$PS1" ]; then
 
 function parse_git_branch {
@@ -88,14 +83,6 @@ function parse_git_branch {
 	# export PS1="\h:\W \u\$(parse_git_branch)\$ "
 	SEPCOL='\[\e[1;34m\]'
 	export PS1="\[\e[0;34m\]\$(parse_git_branch)\n\[\e[0;36m\]\u${SEPCOL}@\[\e[1;36m\]\h${SEPCOL}:\[\e[1;32m\]\w${SEPCOL}\$ \[\e[0m\]"
-fi
-
-export NODE_PATH=$HOME/.npm:/usr/local/lib/node_modules
-export PATH=$HOME/bin:$HOME/bin/dzbin:$HOME/bin/jdk/bin:$HOME/bin/sdk/platform-tools:$HOME/bin/sdk/tools:$PATH
-export PATH=$PATH:$HOME/adt64/sdk/platform-tools
-
-if [ -d $HOME/.rvm/bin ]; then
-	export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
 export EDITOR=vim
