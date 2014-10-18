@@ -87,4 +87,8 @@ fi
 
 export EDITOR=vim
 
+# Load local bashrc file
+if [ -f .bashrc_local ] ; then
+    . .bashrc_local
+fi
 

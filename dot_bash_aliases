@@ -3,15 +3,15 @@ alias la='ls -la'
 alias lt='ls -lt'
 alias lta='ls -lta'
 
-rgrep() {
-    pat="$1"
+grit() {
+    kw="$1"
     if [ -z "$1" ]; then
-        echo "Usage: rgrep <keyword> [dir to search]"
+        echo "Usage: grit <keyword> [dir to search]"
     else
         if [ -z "$2" ]; then
-            grep -s -r -i "$pat" .
+            grep -s -R -i "$kw" .
         else
-            grep -s -r -i "$pat" "$2"
+            grep -s -R -i "$kw" "$2"
         fi
     fi
 }
