@@ -1,16 +1,17 @@
 alias ll='ls -l'
 alias la='ls -la'
-alias lt='ls -lta'
+alias lt='ls -lt'
+alias lta='ls -lta'
 
-gir() {
+rgrep() {
     pat="$1"
     if [ -z "$1" ]; then
-        echo "Usage: gir [some string to search ps output for] [optional directory to start in]"
+        echo "Usage: rgrep <keyword> [dir to search]"
     else
         if [ -z "$2" ]; then
-            grep --color=auto -sH -r -i "$pat" .
+            grep -s -r -i "$pat" .
         else
-            grep --color=auto -sH -r -i "$pat" "$2"
+            grep -s -r -i "$pat" "$2"
         fi
     fi
 }
